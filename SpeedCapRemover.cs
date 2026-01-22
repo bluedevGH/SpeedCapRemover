@@ -24,7 +24,7 @@ namespace UncappedSpeedMod
         [HarmonyPrefix]
         public static void RaiseSpeedLimit(NewMovement __instance)
         {
-            // set to 1000 to "remove" speed cap (just set it really high so it is never reached)
+            // set to 5000 to "remove" speed cap (just set it really high so it is never reached)
             
             __instance.walkSpeed = 5000f;
 
