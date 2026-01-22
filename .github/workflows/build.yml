@@ -1,9 +1,14 @@
 name: Build SpeedCapRemover DLL
-on: [push, workflow_dispatch]
+
+on:
+  push:
+    branches: [ "main", "development" ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -11,11 +16,21 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
 
-      - name: Compile
+      - name: Compile with CSC
         shell: cmd
         run: |
           call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\VsDevCmd.bat"
-          csc /target:library /r:libs/UnityEngine.dll /r:libs/UnityEngine.CoreModule.dll /r:libs/Assembly-CSharp.dll /r:libs/BepInEx.dll /r:libs/0Harmony.dll /out:SpeedCapRemover.dll SpeedCapRemover.cs
+          csc /target:library ^
+          /r:libs/netstandard.dll ^
+          /r:libs/UnityEngine.dll ^
+          /r:libs/UnityEngine.CoreModule.dll ^
+          /r:libs/UnityEngine.PhysicsModule.dll ^
+          /r:libs/UnityEngine.UI.dll ^
+          /r:libs/Assembly-CSharp.dll ^
+          /r:libs/BepInEx.dll ^
+          /r:libs/0Harmony.dll ^
+          /out:SpeedCapRemover.dll ^
+          SpeedCapRemover.cs
 
       - name: Upload DLL Artifact
         uses: actions/upload-artifact@v4
