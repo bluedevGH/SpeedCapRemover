@@ -1,22 +1,24 @@
 name: Build SpeedCapRemover DLL
-
-on:
-  push:
-    branches: [ "main", "development" ]
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
-      - name: Checkout Code
+      - name: Checkout Public Code
         uses: actions/checkout@v4
+
+      - name: Checkout Private Dependencies
+        uses: actions/checkout@v4
+        with:
+          repository: bluedevGH/SpeedCapDependencies
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: libs
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
 
-      - name: Compile with CSC
+      - name: Compile
         shell: cmd
         run: |
           call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\VsDevCmd.bat"
@@ -32,7 +34,7 @@ jobs:
           /out:SpeedCapRemover.dll ^
           SpeedCapRemover.cs
 
-      - name: Upload DLL Artifact
+      - name: Upload DLL
         uses: actions/upload-artifact@v4
         with:
           name: SpeedCapRemover-Release
