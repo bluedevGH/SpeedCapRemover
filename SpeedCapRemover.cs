@@ -30,7 +30,7 @@ namespace UncappedSpeedMod
 
             if (__instance.rb != null)
             {
-                __instance.rb.drag = 1f;
+                __instance.rb.drag = 0f;
             }
             
         }
