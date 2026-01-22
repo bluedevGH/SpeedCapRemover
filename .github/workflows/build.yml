@@ -1,4 +1,4 @@
-name: Build Plugin DLL
+name: Build SpeedCapRemover DLL
 
 on:
   push:
@@ -16,19 +16,19 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
 
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1
-
-      - name: Restore Dependencies
-        run: nuget restore SpeedCapRemover.sln
-        continue-on-error: true
-
-      - name: Build DLL
+      - name: Compile with CSC
         run: |
-          csc /target:library /out:SpeedCapRemover.dll SpeedCapRemover.cs
+          csc /target:library `
+          /r:libs/UnityEngine.dll `
+          /r:libs/UnityEngine.CoreModule.dll `
+          /r:libs/Assembly-CSharp.dll `
+          /r:libs/BepInEx.dll `
+          /r:libs/0Harmony.dll `
+          /out:SpeedCapRemover.dll `
+          SpeedCapRemover.cs
 
-      - name: Upload Result
+      - name: Upload DLL Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Compiled-DLL
+          name: SpeedCapRemover-Release
           path: SpeedCapRemover.dll
