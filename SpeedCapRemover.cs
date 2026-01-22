@@ -26,11 +26,11 @@ namespace UncappedSpeedMod
         {
             // set to 5000 to "remove" speed cap (just set it really high so it is never reached)
             
-            __instance.walkSpeed = 5000f;
+            __instance.walkSpeed = 1000f;
 
             if (__instance.rb != null)
             {
-                __instance.rb.drag = 5f;
+                __instance.rb.drag = 1f;
             }
             
         }
