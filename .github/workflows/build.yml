@@ -13,7 +13,7 @@ jobs:
         with:
           repository: bluedevGH/SpeedCapDependencies
           token: ${{ secrets.PRIVATE_REPO_TOKEN }}
-          path: libs
+          path: libs  # This creates the "libs" folder only during the build
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
