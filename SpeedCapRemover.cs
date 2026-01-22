@@ -24,13 +24,13 @@ namespace UncappedSpeedMod
         [HarmonyPrefix]
         public static void RaiseSpeedLimit(NewMovement __instance)
         {
-            // set to 1000 to "remove" speed cap (just set it really high so it is never reached)
+            // set to 5000 to "remove" speed cap (just set it really high so it is never reached)
             
-            __instance.walkSpeed = 5000f;
+            __instance.walkSpeed = 1000f;
 
             if (__instance.rb != null)
             {
-                __instance.rb.drag = 100f;
+                __instance.rb.drag = 0f;
             }
             
         }
@@ -38,3 +38,4 @@ namespace UncappedSpeedMod
 }
 
 // this is my first real program/mod using C# so if anything breaks, please give me some time to learn!
+// using this to push an action please ignore

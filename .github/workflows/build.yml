@@ -1,0 +1,41 @@
+name: Build SpeedCapRemover DLL
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Public Code
+        uses: actions/checkout@v4
+
+      - name: Checkout Private Dependencies
+        uses: actions/checkout@v4
+        with:
+          repository: bluedevGH/SpeedCapDependencies
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: libs  # This creates the "libs" folder only during the build
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Compile
+        shell: cmd
+        run: |
+          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\VsDevCmd.bat"
+          csc /target:library ^
+          /r:libs/netstandard.dll ^
+          /r:libs/UnityEngine.dll ^
+          /r:libs/UnityEngine.CoreModule.dll ^
+          /r:libs/UnityEngine.PhysicsModule.dll ^
+          /r:libs/UnityEngine.UI.dll ^
+          /r:libs/Assembly-CSharp.dll ^
+          /r:libs/BepInEx.dll ^
+          /r:libs/0Harmony.dll ^
+          /out:SpeedCapRemover.dll ^
+          SpeedCapRemover.cs
+
+      - name: Upload DLL
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpeedCapRemover-Release
+          path: SpeedCapRemover.dll
