@@ -33,6 +33,7 @@ jobs:
           /r:libs/UnityEngine.dll ^
           /r:libs/UnityEngine.CoreModule.dll ^
           /r:libs/UnityEngine.PhysicsModule.dll ^
+          /r:libs/UnityEngine.InputLegacyModule.dll ^
           /r:libs/UnityEngine.UI.dll ^
           /r:libs/Assembly-CSharp.dll ^
           /r:libs/BepInEx.dll ^
