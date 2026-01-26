@@ -39,10 +39,10 @@ namespace UncappedSpeedMod
         private void Update() { //  the update space runs every frame
         try {
             if (Input.GetKeyDown(KeyCode.U)) {
-                logger.LogInfo("U key has been pressed");
+                Console.WriteLine("U key has been pressed");
             }
         } catch(System.Exception ex) {
-            logger.LogError($"err in update {ex}");
+            Console.WriteLine($"err from {ex}")
         }
         }
     }
