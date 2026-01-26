@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace UncappedSpeedMod
 {
-    var speedLogs = new ManualLogSource("speedLogs");
     [BepInPlugin("com.renshei.uncapped", "Uncapped Speed", "1.1.3")]
     public class UncappedSpeedPlugin : BaseUnityPlugin
     {
         private void Awake()
         {
+            var speedLogs = new ManualLogSource("speedLogs");
             BepInEx.Logging.Logger.Sources.Add(speedLogs);
             Harmony.CreateAndPatchAll(typeof(SpeedCapPatch));
             Logger.LogInfo("speed cap successfully removed from ultrakill");
