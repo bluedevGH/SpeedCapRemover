@@ -17,7 +17,7 @@ namespace UncappedSpeedMod
     }
 
     public static class ConsoleManager {
-        static ConsoleManagerHelper() {
+        static void ConsoleManagerHelper() {
             ConsoleManager.SetConsoleEnabled(true);
         }
     }
