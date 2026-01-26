@@ -40,6 +40,8 @@ namespace UncappedSpeedMod
             if (Input.GetKeyDown(KeyCode.U)) {
                 Logger.LogInfo("U key has been pressed");
             }
+        } catch(System.Exception ex) {
+            Logger.LogInfo($"err in update {ex}");
         }
         }
     }
