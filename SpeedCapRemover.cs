@@ -9,18 +9,18 @@ namespace UncappedSpeedMod
     {
         private void Awake()
         {
-            ConsoleManager.Initialize();
+            //ConsoleManager.Initialize();
             Harmony.CreateAndPatchAll(typeof(SpeedCapPatch));
             Logger.LogInfo("speed cap successfully removed from ultrakill");
             Logger.LogInfo("visit BlueDevGH on GitHub for the source code!");
         }
     }
 
-    public static class ConsoleManager {
-        static void ConsoleManagerHelper() {
-            ConsoleManager.SetConsoleEnabled(true);
-        }
-    }
+    //public static class ConsoleManager {
+        //static void ConsoleManagerHelper() {
+            //ConsoleManager.SetConsoleEnabled(true);
+        //}
+    //}
 
     [HarmonyPatch(typeof(NewMovement))]
     public class SpeedCapPatch
@@ -45,11 +45,13 @@ namespace UncappedSpeedMod
         public void Update() { //  the update space runs every frame
         try {
             if (Input.GetKeyDown(KeyCode.U)) {
-                ConsoleManager.StandardOutStream.WriteLine("u key got pressed hb");
+                //ConsoleManager.StandardOutStream.WriteLine("u key got pressed hb");
+                System.Console.Writeline("testing");
             }
         }
         catch(System.Exception ex) {
-            ConsoleManager.StandardOutStream.WriteLine($"err from {ex}");
+            //ConsoleManager.StandardOutStream.WriteLine($"err from {ex}");
+            System.Console.Writeline("testing");
         }
         }
     }
