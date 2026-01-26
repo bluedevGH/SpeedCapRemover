@@ -7,7 +7,7 @@ namespace UncappedSpeedMod
     [BepInPlugin("com.renshei.uncapped", "Uncapped Speed", "1.1.3")]
     public class UncappedSpeedPlugin : BaseUnityPlugin
     {
-        private void Awake()
+        public void Awake()
         {
             var speedLogs = new ManualLogSource("speedLogs");
             BepInEx.Logging.Logger.Sources.Add(speedLogs);
