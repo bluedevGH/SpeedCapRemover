@@ -2,7 +2,7 @@ using BepInEx;
 using HarmonyLib;
 using UnityEngine;
 using BepInEx.Logging;
-using BepInEx.Input;
+using BepInEx.KeyboardShortcut;
 
 namespace UncappedSpeedMod
 {
