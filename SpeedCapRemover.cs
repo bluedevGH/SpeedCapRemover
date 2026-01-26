@@ -15,6 +15,11 @@ namespace UncappedSpeedMod
         }
     }
 
+    public class ConsoleManager() {
+        ConsoleManager.Initialize();
+        ConsoleManager.SetConsoleEnabled(true);
+    }
+
     [HarmonyPatch(typeof(NewMovement))]
     public class SpeedCapPatch
     {
@@ -36,8 +41,6 @@ namespace UncappedSpeedMod
         }
 
         public void Update() { //  the update space runs every frame
-        ConsoleManager.Initialize();
-        ConsoleManager.SetConsoleEnabled(true);
         try {
             if (Input.GetKeyDown(KeyCode.U)) {
                 ConsoleManager.StandardOutStream.WriteLine("u key got pressed hb");
