@@ -36,14 +36,14 @@ namespace UncappedSpeedMod
         }
 
         public void Update() { //  the update space runs every frame
+        ConsoleManager.Initialize();
+        ConsoleManager.SetConsoleEnabled(true);
         try {
             if (Input.GetKeyDown(KeyCode.U)) {
-                Console.WriteLine("U key has been pressed");
+                ConsoleManager.StandardOutStream.WriteLine("u key got pressed hb");
             }
         }
         catch(System.Exception ex) {
-            ConsoleManager.Initialize();
-            ConsoleManager.SetConsoleEnabled(true);
             ConsoleManager.StandardOutStream.WriteLine($"err from {ex}");
         }
         }
