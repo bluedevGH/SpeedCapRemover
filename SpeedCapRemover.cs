@@ -9,14 +9,14 @@ namespace UncappedSpeedMod
     {
         private void Awake()
         {
-            ConsoleManager.Initialize()
+            ConsoleManager.Initialize();
             Harmony.CreateAndPatchAll(typeof(SpeedCapPatch));
             Logger.LogInfo("speed cap successfully removed from ultrakill");
             Logger.LogInfo("visit BlueDevGH on GitHub for the source code!");
         }
     }
 
-    public static class ConsoleManager() {
+    public static class ConsoleManager {
         ConsoleManager.SetConsoleEnabled(true);
     }
 
