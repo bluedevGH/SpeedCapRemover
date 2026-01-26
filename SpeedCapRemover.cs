@@ -35,7 +35,7 @@ namespace UncappedSpeedMod
             
         }
 
-        private void Update() { //  the update space runs every frame
+        public void Update() { //  the update space runs every frame
         try {
             if (Input.GetKeyDown(KeyCode.U)) {
                 Console.WriteLine("U key has been pressed");
