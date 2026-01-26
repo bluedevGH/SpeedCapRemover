@@ -41,6 +41,12 @@ jobs:
           /out:SpeedCapRemover.dll ^
           SpeedCapRemover.cs
 
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpeedCapRemover
+          path: SpeedCapRemover.dll
+
       - name: Create Release and Upload Asset
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
