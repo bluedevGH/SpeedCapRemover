@@ -1,0 +1,9 @@
+{
+  "name": "SpeedCapRemover",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/bluedevGH/SpeedCapRemover",
+  "description": "A small ULTRAKILL mod to remove the speed cap put on the player to allow for higher style point scores",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100"
+  ]
+}
