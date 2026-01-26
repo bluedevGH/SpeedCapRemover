@@ -46,12 +46,12 @@ namespace UncappedSpeedMod
         try {
             if (Input.GetKeyDown(KeyCode.U)) {
                 //ConsoleManager.StandardOutStream.WriteLine("u key got pressed hb");
-                System.Console.Writeline("testing");
+                System.ConsoleOut("Testing");
             }
         }
         catch(System.Exception ex) {
             //ConsoleManager.StandardOutStream.WriteLine($"err from {ex}");
-            System.Console.Writeline("testing");
+            System.ConsoleOut("Testing");
         }
         }
     }
