@@ -17,7 +17,9 @@ namespace UncappedSpeedMod
     }
 
     public static class ConsoleManager {
-        ConsoleManager.SetConsoleEnabled(true);
+        static ConsoleManagerHelper() {
+            ConsoleManager.SetConsoleEnabled(true);
+        }
     }
 
     [HarmonyPatch(typeof(NewMovement))]
