@@ -34,6 +34,13 @@ namespace UncappedSpeedMod
             }
             
         }
+
+        private static void detectKey() {
+            if (Input.GetKeyDown(KeyCode.U)) {
+                Logger.LogInfo("U key has been pushed, testing rigidbody fx");
+                __instance.rb.velocity = new Vector3(+10, +10, +10);
+            }
+        }
     }
 }
 
