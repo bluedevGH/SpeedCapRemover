@@ -9,6 +9,7 @@ namespace UncappedSpeedMod
     {
         private void Awake()
         {
+            ConsoleManager.Initialize()
             Harmony.CreateAndPatchAll(typeof(SpeedCapPatch));
             Logger.LogInfo("speed cap successfully removed from ultrakill");
             Logger.LogInfo("visit BlueDevGH on GitHub for the source code!");
@@ -16,8 +17,7 @@ namespace UncappedSpeedMod
     }
 
     public static class ConsoleManager() {
-        ConsoleManager.Initialize()
-        ConsoleManager.SetConsoleEnabled(true)
+        ConsoleManager.SetConsoleEnabled(true);
     }
 
     [HarmonyPatch(typeof(NewMovement))]
