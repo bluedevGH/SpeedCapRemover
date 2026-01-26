@@ -10,7 +10,7 @@ namespace UncappedSpeedMod
         private void Awake()
         {
             Harmony.CreateAndPatchAll(typeof(SpeedCapPatch));
-            logger = Logger.CreateLogSource("SpeedCapRemover")
+            logger = Logger.CreateLogSource("SpeedCapRemover");
             Logger.LogInfo("speed cap successfully removed from ultrakill");
             Logger.LogInfo("visit BlueDevGH on GitHub for the source code!");
         }
