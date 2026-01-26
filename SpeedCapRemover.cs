@@ -42,7 +42,7 @@ namespace UncappedSpeedMod
                 Console.WriteLine("U key has been pressed");
             }
         } catch(System.Exception ex) {
-            Console.WriteLine($"err from {ex}")
+            Console.WriteLine($"err from {ex}");
         }
         }
     }
