@@ -33,12 +33,19 @@ jobs:
           /r:libs/UnityEngine.dll ^
           /r:libs/UnityEngine.CoreModule.dll ^
           /r:libs/UnityEngine.PhysicsModule.dll ^
+          /r:libs/UnityEngine.InputLegacyModule.dll ^
           /r:libs/UnityEngine.UI.dll ^
           /r:libs/Assembly-CSharp.dll ^
           /r:libs/BepInEx.dll ^
           /r:libs/0Harmony.dll ^
           /out:SpeedCapRemover.dll ^
           SpeedCapRemover.cs
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpeedCapRemover
+          path: SpeedCapRemover.dll
 
       - name: Create Release and Upload Asset
         uses: softprops/action-gh-release@v2
