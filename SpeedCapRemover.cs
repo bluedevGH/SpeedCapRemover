@@ -28,7 +28,7 @@ namespace UncappedSpeedMod
                 if (Input.GetKeyDown(KeyCode.V))
                 {
                     speedLogs.LogInfo("V key pressed");
-                    __instance.rb.velocity += Vector3(0, 10, 0)
+                    __instance.rb.velocity += Vector3(0, 10, 0);
                 }
             }
             catch (System.Exception ex)
