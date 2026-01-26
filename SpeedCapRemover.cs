@@ -44,7 +44,7 @@ namespace UncappedSpeedMod
         catch(System.Exception ex) {
             ConsoleManager.Initialize();
             ConsoleManager.SetConsoleEnabled(true);
-            ConsoleManager.StandardOutStream.WriteLine($"err from {ex}")
+            ConsoleManager.StandardOutStream.WriteLine($"err from {ex}");
         }
         }
     }
