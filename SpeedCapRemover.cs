@@ -10,6 +10,7 @@ namespace UncappedSpeedMod
         private void Awake()
         {
             Harmony.CreateAndPatchAll(typeof(SpeedCapPatch));
+            logger = Logger.CreateLogSource("SpeedCapRemover")
             Logger.LogInfo("speed cap successfully removed from ultrakill");
             Logger.LogInfo("visit BlueDevGH on GitHub for the source code!");
         }
@@ -38,10 +39,10 @@ namespace UncappedSpeedMod
         private void Update() { //  the update space runs every frame
         try {
             if (Input.GetKeyDown(KeyCode.U)) {
-                Logger.LogInfo("U key has been pressed");
+                logger.LogInfo("U key has been pressed");
             }
         } catch(System.Exception ex) {
-            Logger.LogInfo($"err in update {ex}");
+            logger.LogError($"err in update {ex}");
         }
         }
     }
