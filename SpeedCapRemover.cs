@@ -40,6 +40,7 @@ namespace UncappedSpeedMod
             // handle keybaord inputs
             if (Input.GetKeyDown(KeyCode.U)) {
                 Logger.LogInfo("U key has been pressed");
+                rb.Velocity = new Vector3(+10, +0, +10);
             }
             
         }
