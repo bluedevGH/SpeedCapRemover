@@ -51,7 +51,7 @@ namespace UncappedSpeedMod
         }
         catch(System.Exception ex) {
             //ConsoleManager.StandardOutStream.WriteLine($"err from {ex}");
-            System.ConsoleOut("Testing");
+            System.ConsoleOut($"err from {ex}");
         }
         }
     }
