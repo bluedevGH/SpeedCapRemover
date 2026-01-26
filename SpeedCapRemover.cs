@@ -15,7 +15,7 @@ namespace UncappedSpeedMod
         }
     }
 
-    public class ConsoleManager() {
+    public static class ConsoleManager() {
         ConsoleManager.Initialize();
         ConsoleManager.SetConsoleEnabled(true);
     }
