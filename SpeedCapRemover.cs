@@ -1,8 +1,8 @@
 using BepInEx;
 using HarmonyLib;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using BepInEx.Logging;
-using BepInEx.KeyboardShortcut;
 
 namespace UncappedSpeedMod
 {
@@ -26,8 +26,8 @@ namespace UncappedSpeedMod
         {
             try
             {
-                if (Input.GetKeyDown(KeyCode.U))
-                {
+                var keyboard = UnityEngine.InputSystem.Keyboard.current;
+                if (keyboard != null && keyboard.uKey.wasPressedThisFrame) {
                     speedLogs.LogInfo("U key pressed");
                 }
             }
