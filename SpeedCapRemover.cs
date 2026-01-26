@@ -31,7 +31,7 @@ namespace UncappedSpeedMod
                     NewMovement player = NewMovement.Instance;
 
                     if (player != null && player.rb != null) {
-                        player.rb.velocity += new Vector3(0, 10, 0)
+                        player.rb.velocity += new Vector3(0, 10, 0);
                         player.rb.drag = 0;
                     }
                 }
