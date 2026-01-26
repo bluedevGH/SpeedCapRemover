@@ -4,11 +4,13 @@ using UnityEngine;
 
 namespace UncappedSpeedMod
 {
+    var speedLogs = new ManualLogSource("speedLogs");
     [BepInPlugin("com.renshei.uncapped", "Uncapped Speed", "1.1.3")]
     public class UncappedSpeedPlugin : BaseUnityPlugin
     {
         private void Awake()
         {
+            BepInEx.Logging.Logger.Sources.Add(speedLogs);
             Harmony.CreateAndPatchAll(typeof(SpeedCapPatch));
             Logger.LogInfo("speed cap successfully removed from ultrakill");
             Logger.LogInfo("visit BlueDevGH on GitHub for the source code!");
@@ -38,11 +40,11 @@ namespace UncappedSpeedMod
         public void Update() { //  the update space runs every frame
         try {
             if (Input.GetKeyDown(KeyCode.U)) {
-
+                speedLogs.LogInfo("U key pressed");
             }
         }
         catch(System.Exception ex) {
-
+            speedLogs.LogError($"err with {ex}");
         }
         }
     }
