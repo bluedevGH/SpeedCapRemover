@@ -32,6 +32,15 @@ namespace UncappedSpeedMod
             {
                 __instance.rb.drag = 0f;
             }
+
+            if (rb.velocity > new Vector3(0, 100, 0)) {
+                Logger.LogInfo("exceeeded 100u/s YVelocity (probably used slam storage)");
+            }
+
+            // handle keybaord inputs
+            if (Input.GetKeyDown(KeyCode.U)) {
+                Logger.LogInfo("U key has been pressed");
+            }
             
         }
     }
