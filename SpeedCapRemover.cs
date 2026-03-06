@@ -50,7 +50,7 @@ namespace UncappedSpeedMod
 
             if (__instance.rb != null)
             {
-                __instance.rb.drag = 0f;
+                __instance.rb.drag = 0f; // inf sliding needs fixing
             }
         }
     }
